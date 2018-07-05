@@ -40,19 +40,19 @@ app.get('/', (req, res) => {
     });
 });
 
-    // get access token
-    app.get('/auth/callback', (req, res) => {
-        consumer.getOAuthAccessToken(oauthRequestToken, oauthRequestTokenSecret, req.query.oauth_verifier, (error, _oauthAccessToken, _oauthAccessTokenSecret) => {
-            if (error) {
-                res.status(500).send("Error create access token: " + error);
-            } else {
-                tumblrOauthAccessToken = _oauthAccessToken;
-                tumblrOauthAccessTokenSecret = _oauthAccessTokenSecret;
-                res.status(200).send('Access Token:' + tumblrOauthAccessToken +'<br/>Access Token Secret:'+tumblrOauthAccessTokenSecret);
-            }
-        });
+// get access token
+app.get('/auth/callback', (req, res) => {
+    consumer.getOAuthAccessToken(oauthRequestToken, oauthRequestTokenSecret, req.query.oauth_verifier, (error, _oauthAccessToken, _oauthAccessTokenSecret) => {
+        if (error) {
+            res.status(500).send("Error create access token: " + error);
+        } else {
+            tumblrOauthAccessToken = _oauthAccessToken;
+            tumblrOauthAccessTokenSecret = _oauthAccessTokenSecret;
+            res.status(200).send('Access Token:' + tumblrOauthAccessToken +'<br/>Access Token Secret:'+tumblrOauthAccessTokenSecret);
+        }
     });
+});
 
-    http.createServer(app).listen(app.get('port'), () => {
-        console.log('Express server listening on port ' + app.get('port'));
+http.createServer(app).listen(app.get('port'), () => {
+    console.log('Express server listening on port ' + app.get('port'));
 })
