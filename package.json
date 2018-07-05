@@ -1,0 +1,23 @@
+{
+  "name": "tumblr_app",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "config": "^1.30.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hnmx4/pg_tumblr.git"
+  },
+  "author": "hnmx4",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hnmx4/pg_tumblr/issues"
+  },
+  "homepage": "https://github.com/hnmx4/pg_tumblr#readme"
+}
