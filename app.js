@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
             oauthRequestToken = oauthToken;
             oauthRequestTokenSecret = oauthTokenSecret;
 
-            res.redirect("https://www.tumblr.com/oauth/authorize??oauth_token=" + oauthRequestToken);
+            res.redirect("https://www.tumblr.com/oauth/authorize?oauth_token=" + oauthRequestToken);
         }
     });
 });
